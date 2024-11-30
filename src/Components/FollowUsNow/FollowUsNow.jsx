@@ -11,7 +11,7 @@ const FollowUsNow = () => {
     ]
 
     return (
-        <section className="py-12 md:py-16 bg-white">
+        <section id={'follow-us-now'} className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="text-center mb-8 flex flex-col items-center gap-4">
                     <p className="text-2xl text-[#1B1A1A] mb-2">Follow Us Now</p>

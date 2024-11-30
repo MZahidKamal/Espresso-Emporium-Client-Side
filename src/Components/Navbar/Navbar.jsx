@@ -11,16 +11,19 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 
-    const menuItems = [
-        { label: "Home", path: "/" },
-        { label: "About Us", path: "/about_us" },
-        { label: "Our Products", path: "/products" },
-        { label: "Contact Us", path: "/contact" },
-        { label: "Registration", path: "/auth/registration" },
-        { label: "Login", path: "/auth/login" },
-        { label: "Profile", path: "/auth/user_profile" },
-        { label: "Profile Update", path: "/auth/profile_update" },
-    ]
+    const handleOurProducts = () => {
+        document.getElementById('popular-products').scrollIntoView({behavior: 'smooth'});
+    }
+
+
+    const handleAboutUs = () => {
+        document.getElementById('follow-us-now').scrollIntoView({behavior: 'smooth'});
+    }
+
+
+    const handleContactUs = () => {
+        document.getElementById('footer').scrollIntoView({behavior: 'smooth'});
+    }
 
 
     return (
@@ -41,16 +44,16 @@ const Navbar = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center gap-8">
-                        {menuItems.map((item) => (
-                            <Link
-                                key={item.path}
-                                to={item.path}
-                                className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300"
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                        <Link onClick={signOutCurrentUser} to={'/auth/login'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Logout</Link>
+
+                        <button onClick={handleOurProducts} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Products</button>
+                        <button onClick={handleAboutUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">About Us</button>
+                        <button onClick={handleContactUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Contact Us</button>
+
+                        {user && <Link to={'/auth/user_profile'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Profile</Link>}
+                        {!user && <Link to={'/auth/registration'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Registration</Link>}
+                        {!user && <Link to={'/auth/login'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Login</Link>}
+                        {user && <Link onClick={signOutCurrentUser} to={'/auth/login'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Logout</Link>}
+
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -71,16 +74,14 @@ const Navbar = () => {
                 {isMenuOpen && (
                     <div className="lg:hidden pb-6">
                         <div className="flex flex-col gap-4">
-                            {menuItems.map((item) => (
-                                <Link
-                                    key={item.path}
-                                    to={item.path}
-                                    className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
+                            <button onClick={handleOurProducts} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Products</button>
+                            <button onClick={handleAboutUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">About Us</button>
+                            <button onClick={handleContactUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Contact Us</button>
+
+                            {user && <Link to={'/auth/user_profile'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Profile</Link>}
+                            {!user && <Link to={'/auth/registration'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Registration</Link>}
+                            {!user && <Link to={'/auth/login'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Login</Link>}
+                            {user && <Link onClick={signOutCurrentUser} to={'/auth/login'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Logout</Link>}
                         </div>
                     </div>
                 )}

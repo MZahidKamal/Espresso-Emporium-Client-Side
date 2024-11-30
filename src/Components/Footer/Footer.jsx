@@ -30,7 +30,7 @@ const Footer = () => {
 
 
     return (
-        <footer className="pt-12 md:pt-16 bg-[url('/src/assets/images/more/13.jpg')] bg-cover bg-no-repeat">
+        <footer id={'footer'} className="pt-12 md:pt-16 bg-[url('/src/assets/images/more/13.jpg')] bg-cover bg-no-repeat">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
                     {/* Left Section */}

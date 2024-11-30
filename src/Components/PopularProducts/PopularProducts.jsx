@@ -55,7 +55,7 @@ const PopularProducts = () => {
 
 
     return (
-        <section className="pt-12 md:pt-16 bg-[url('/src/assets/images/more/1.png')] bg-cover bg-no-repeat">
+        <section id={'popular-products'} className="pt-12 md:pt-16 bg-[url('/src/assets/images/more/1.png')] bg-cover bg-no-repeat">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="text-center mb-8 flex flex-col items-center gap-4">
                     <p className="text-2xl text-[#1B1A1A] mb-2">--- Sip & Savor ---</p>
