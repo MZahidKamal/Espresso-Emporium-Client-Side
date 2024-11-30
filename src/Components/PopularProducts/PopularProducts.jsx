@@ -1,4 +1,5 @@
 import PopularProductCard from "../PopularProductCard/PopularProductCard.jsx";
+import BASE_URL from '../../SharedUtilities/SharedUtilities.jsx'
 import { RiCupLine } from "react-icons/ri";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
@@ -16,7 +17,8 @@ const PopularProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('https://espresso-emporium-server-side-bc2g.vercel.app/coffees');
+                const response = await fetch(`${BASE_URL}/coffees`);
+                // const response = await fetch(`http://localhost:3000/coffees`);
                 if (!response.ok) {
                     new Error('Failed to fetch coffees');
                 }

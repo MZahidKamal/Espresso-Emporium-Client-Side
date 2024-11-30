@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowLeft } from 'react-icons/fa'
 import Swal from 'sweetalert2'
+import BASE_URL from "../../SharedUtilities/SharedUtilities.jsx";
 
 
 const AddNewCoffee = () => {
@@ -31,7 +32,7 @@ const AddNewCoffee = () => {
         event.preventDefault()
         // console.log(formData)
 
-        fetch('https://espresso-emporium-server-side-bc2g.vercel.app/coffees', {
+        fetch(`${BASE_URL}/coffees`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify(formData),

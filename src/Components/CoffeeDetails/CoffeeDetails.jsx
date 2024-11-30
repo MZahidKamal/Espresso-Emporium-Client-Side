@@ -3,6 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa'
 import {useEffect, useState} from "react";
 import {useParams} from "react-router";
 import {FiAlertCircle, FiLoader} from "react-icons/fi";
+import BASE_URL from "../../SharedUtilities/SharedUtilities.jsx";
 
 
 const CoffeeDetails = () => {
@@ -17,7 +18,7 @@ const CoffeeDetails = () => {
     useEffect(() => {
         const fetchCoffee = async () => {
             try {
-                const response = await fetch(`https://espresso-emporium-server-side-bc2g.vercel.app/${id}`);
+                const response = await fetch(`${BASE_URL}/coffees/${id}`);
                 if (!response.ok) {
                     new Error('Failed to fetch coffee details');
                 }

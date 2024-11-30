@@ -13,6 +13,7 @@ import {
 import AuthContext from "./AuthContext.jsx";
 import auth from "../Firebase/firebase.init.js";
 import {toast} from "react-toastify";
+import BASE_URL from "../SharedUtilities/SharedUtilities.jsx";
 
 
 const AuthProvider = ({children}) => {
@@ -67,7 +68,7 @@ const AuthProvider = ({children}) => {
                 photoURL: auth.currentUser.photoURL,
             };
 
-            const response = await fetch('https://espresso-emporium-server-side-bc2g.vercel.app/users', {
+            const response = await fetch(`${BASE_URL}/users`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userInfoForDatabase),

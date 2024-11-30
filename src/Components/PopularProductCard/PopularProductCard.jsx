@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import {useState} from "react";
 import {FiAlertCircle} from "react-icons/fi";
 import Swal from 'sweetalert2'
+import BASE_URL from "../../SharedUtilities/SharedUtilities.jsx";
 
 
 const PopularProductCard = ({ product }) => {
@@ -29,7 +30,7 @@ const PopularProductCard = ({ product }) => {
 
             if (result.isConfirmed) {
 
-                const response = await fetch(`https://espresso-emporium-server-side-bc2g.vercel.app/coffees/${_id}`, {
+                const response = await fetch(`${BASE_URL}/coffees/${_id}`, {
                     method: 'DELETE',
                 });
                 const result = await response.json(); // Parse the JSON response
