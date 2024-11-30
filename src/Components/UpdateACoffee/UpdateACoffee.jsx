@@ -19,7 +19,7 @@ const UpdateACoffee = () => {
     useEffect(() => {
         const fetchCoffee = async () => {
             try {
-                const response = await fetch(`http://localhost:3000/coffees/${id}`);
+                const response = await fetch(`https://espresso-emporium-server-side-bc2g.vercel.app/coffees/${id}`);
                 if (!response.ok) new Error('Failed to fetch coffee details');
                 const data = await response.json();
                 setFormData(data);
@@ -56,7 +56,7 @@ const UpdateACoffee = () => {
             if (result.isConfirmed) {
 
                 // Proceed with the update only if confirmed
-                const response = await fetch(`http://localhost:3000/coffees/${id}`, {
+                const response = await fetch(`https://espresso-emporium-server-side-bc2g.vercel.app/coffees/${id}`, {
                     method: 'PUT',
                     headers: {'Content-Type': 'application/json',},
                     body: JSON.stringify(formData),

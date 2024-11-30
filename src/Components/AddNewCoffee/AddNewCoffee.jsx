@@ -31,7 +31,7 @@ const AddNewCoffee = () => {
         event.preventDefault()
         // console.log(formData)
 
-        fetch('http://localhost:3000/coffees', {
+        fetch('https://espresso-emporium-server-side-bc2g.vercel.app/coffees', {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify(formData),

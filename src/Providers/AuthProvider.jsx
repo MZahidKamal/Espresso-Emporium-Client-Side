@@ -67,7 +67,7 @@ const AuthProvider = ({children}) => {
                 photoURL: auth.currentUser.photoURL,
             };
 
-            const response = await fetch('http://localhost:3000/users', {
+            const response = await fetch('https://espresso-emporium-server-side-bc2g.vercel.app/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userInfoForDatabase),

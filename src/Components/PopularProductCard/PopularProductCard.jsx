@@ -29,7 +29,7 @@ const PopularProductCard = ({ product }) => {
 
             if (result.isConfirmed) {
 
-                const response = await fetch(`http://localhost:3000/coffees/${_id}`, {
+                const response = await fetch(`https://espresso-emporium-server-side-bc2g.vercel.app/coffees/${_id}`, {
                     method: 'DELETE',
                 });
                 const result = await response.json(); // Parse the JSON response
