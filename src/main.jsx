@@ -13,6 +13,7 @@ import ProfileUpdate from "./Components/ProfileUpdate/ProfileUpdate.jsx";
 import ResetPassword from "./Components/ResetPassword/ResetPassword.jsx";
 import AuthProvider from "./Providers/AuthProvider.jsx";
 import Error404 from "./Components/Error404/Error404.jsx";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 
 
 const root = document.getElementById("root");
@@ -26,11 +27,11 @@ ReactDOM.createRoot(root).render(
                     <Route path={'/'} element={<HomeLayout/>}/>
                     <Route path={'/add_new_coffee'} element={<AddNewCoffee/>}/>
                     <Route path={'/coffee_details/:id'} element={<CoffeeDetails/>}/>
-                    <Route path={'/update_a_coffee/:id'} element={<UpdateACoffee/>}/>
+                    <Route path={'/update_a_coffee/:id'} element={<PrivateRoute><UpdateACoffee/></PrivateRoute>}/>
                     <Route path={'/auth/registration'} element={<Registration/>}></Route>
                     <Route path={'/auth/login'} element={<Login/>}></Route>
-                    <Route path={'/auth/user_profile'} element={<UserProfile/>}></Route>
-                    <Route path={'/auth/profile_update'} element={<ProfileUpdate/>}></Route>
+                    <Route path={'/auth/user_profile'} element={<PrivateRoute><UserProfile/></PrivateRoute>}></Route>
+                    <Route path={'/auth/profile_update'} element={<PrivateRoute><ProfileUpdate/></PrivateRoute>}></Route>
                     <Route path={'/auth/reset_password'} element={<ResetPassword/>}></Route>
                 </Route>
                 <Route path={'*'} element={<Error404/>}></Route>

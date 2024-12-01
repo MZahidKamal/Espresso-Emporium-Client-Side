@@ -1,10 +1,14 @@
+import NavbarLogo from '../../assets/images/more/logo1.png'
 import {useContext, useState} from 'react'
-import { Link } from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
 import AuthContext from "../../Providers/AuthContext.jsx";
 
 
 const Navbar = () => {
+
+    const currentLocation = useLocation();
+    //console.log(currentLocation.pathname);
 
 
     const {user, signOutCurrentUser} = useContext(AuthContext);
@@ -33,7 +37,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-2">
                         <img
-                            src="/src/assets/images/more/logo1.png"
+                            src={NavbarLogo}
                             alt="Espresso Emporium"
                             className="w-12 h-12 md:w-14 md:h-14 object-contain"
                         />
@@ -45,9 +49,11 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex items-center gap-8">
 
-                        <button onClick={handleOurProducts} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Products</button>
-                        <button onClick={handleAboutUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">About Us</button>
-                        <button onClick={handleContactUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Contact Us</button>
+                        {currentLocation.pathname === '/' && <button onClick={handleOurProducts} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Products</button>}
+                        {currentLocation.pathname === '/' && <button onClick={handleAboutUs} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">About Us</button>}
+
+                        <button onClick={handleContactUs}
+                                className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Contact Us</button>
 
                         {user && <Link to={'/auth/user_profile'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Profile</Link>}
                         {!user && <Link to={'/auth/registration'} className="text-white font-rancho text-xl hover:text-[#C59D5F] transition-colors duration-300">Registration</Link>}

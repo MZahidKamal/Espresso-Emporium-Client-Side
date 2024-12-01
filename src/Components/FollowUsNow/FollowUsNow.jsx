@@ -1,13 +1,22 @@
+import CardImage01 from '../../assets/images/cups/Rectangle 9.png'
+import CardImage02 from '../../assets/images/cups/Rectangle 10.png'
+import CardImage03 from '../../assets/images/cups/Rectangle 11.png'
+import CardImage04 from '../../assets/images/cups/Rectangle 12.png'
+import CardImage05 from '../../assets/images/cups/Rectangle 13.png'
+import CardImage06 from '../../assets/images/cups/Rectangle 14.png'
+import CardImage07 from '../../assets/images/cups/Rectangle 15.png'
+import CardImage08 from '../../assets/images/cups/Rectangle 16.png'
+
 const FollowUsNow = () => {
     const instagramImages = [
-        { id: 1, src: "/src/assets/images/cups/Rectangle 9.png", alt: "Coffee cup with beans" },
-        { id: 2, src: "/src/assets/images/cups/Rectangle 10.png", alt: "Latte art coffee" },
-        { id: 3, src: "/src/assets/images/cups/Rectangle 11.png", alt: "Coffee with latte art" },
-        { id: 4, src: "/src/assets/images/cups/Rectangle 12.png", alt: "Orange cup coffee" },
-        { id: 5, src: "/src/assets/images/cups/Rectangle 13.png", alt: "Espresso with beans" },
-        { id: 6, src: "/src/assets/images/cups/Rectangle 14.png", alt: "Latte art with coffee bag" },
-        { id: 7, src: "/src/assets/images/cups/Rectangle 15.png", alt: "Smiling coffee" },
-        { id: 8, src: "/src/assets/images/cups/Rectangle 16.png", alt: "Artistic latte design" }
+        { id: 1, src: CardImage01, alt: "Coffee cup with beans" },
+        { id: 2, src: CardImage02, alt: "Latte art coffee" },
+        { id: 3, src: CardImage03, alt: "Coffee with latte art" },
+        { id: 4, src: CardImage04, alt: "Orange cup coffee" },
+        { id: 5, src: CardImage05, alt: "Espresso with beans" },
+        { id: 6, src: CardImage06, alt: "Latte art with coffee bag" },
+        { id: 7, src: CardImage07, alt: "Smiling coffee" },
+        { id: 8, src: CardImage08, alt: "Artistic latte design" }
     ]
 
     return (

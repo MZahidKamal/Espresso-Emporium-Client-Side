@@ -1,3 +1,4 @@
+import FooterLogo from '../../assets/images/more/logo1.png'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
@@ -36,11 +37,7 @@ const Footer = () => {
                     {/* Left Section */}
                     <div className="space-y-6">
                         <Link to="/" className="flex items-center gap-2">
-                            <img
-                                src="/src/assets/images/more/logo1.png"
-                                alt="Espresso Emporium"
-                                className="w-12 h-12 object-contain"
-                            />
+                            <img src={FooterLogo} alt="Espresso Emporium" className="w-12 h-12 object-contain"/>
                             <h2 className="text-[#331A15] font-rancho text-3xl">
                                 Espresso Emporium
                             </h2>
@@ -71,15 +68,15 @@ const Footer = () => {
                             <div className="space-y-3">
                                 <p className="flex items-center gap-2 text-[#1B1A1A]">
                                     <FaPhone className="text-[#331A15]" />
-                                    <span>+88 01533 333 333</span>
+                                    <span>+49 123 4567 8901</span>
                                 </p>
                                 <p className="flex items-center gap-2 text-[#1B1A1A]">
                                     <FaEnvelope className="text-[#331A15]" />
-                                    <span>info@gmail.com</span>
+                                    <span>info@email.com</span>
                                 </p>
                                 <p className="flex items-center gap-2 text-[#1B1A1A]">
                                     <FaMapMarkerAlt className="text-[#331A15]" />
-                                    <span>72, Wall street, King Road, Dhaka</span>
+                                    <span>72, Wall street King Road, 60123 Frankfurt am Main, Germany</span>
                                 </p>
                             </div>
                         </div>

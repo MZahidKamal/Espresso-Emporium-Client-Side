@@ -103,7 +103,7 @@ const Registration = () => {
 
     return (
         <div className="min-h-[calc(100vh-96px-530px)] bg-[url('/src/assets/images/more/11.png')] flex flex-col items-center justify-center py-5">
-            <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+            <div className="max-w-lg w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
                 <div className="text-center">
                     <h2 className="font-rancho text-4xl md:text-5xl text-[#331A15] mb-2">Register</h2>
                     <p className="text-gray-600 text-xl max-w-3xl">Create your account</p>

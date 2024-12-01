@@ -1,9 +1,10 @@
 import { FaEye, FaPen, FaTrash } from 'react-icons/fa'
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {FiAlertCircle} from "react-icons/fi";
 import Swal from 'sweetalert2'
 import BASE_URL from "../../SharedUtilities/SharedUtilities.jsx";
+import AuthContext from "../../Providers/AuthContext.jsx";
 
 
 const PopularProductCard = ({ product }) => {
@@ -11,7 +12,7 @@ const PopularProductCard = ({ product }) => {
 
     const { _id, name, chef, photo } = product;
 
-
+    const {user} = useContext(AuthContext)
     const [error, setError] = useState(null);
 
 
@@ -84,9 +85,10 @@ const PopularProductCard = ({ product }) => {
                 <Link to={`/update_a_coffee/${_id}`} className="p-2 rounded bg-[#3C393B] hover:bg-black transition-colors">
                     <FaPen className="text-white" />
                 </Link>
-                <button onClick={handleDelete} className="p-2 rounded bg-[#EA4744] hover:bg-red-700 transition-colors">
-                    <FaTrash className="text-white" />
-                </button>
+                {user && <button onClick={handleDelete}
+                                 className="p-2 rounded bg-[#EA4744] hover:bg-red-700 transition-colors"><FaTrash
+                    className="text-white"/></button>}
+
             </div>
         </div>
     )

@@ -2,13 +2,15 @@ import PopularProductCard from "../PopularProductCard/PopularProductCard.jsx";
 import BASE_URL from '../../SharedUtilities/SharedUtilities.jsx'
 import { RiCupLine } from "react-icons/ri";
 import {Link} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {FiLoader} from "react-icons/fi";
+import AuthContext from "../../Providers/AuthContext.jsx";
 
 
 const PopularProducts = () => {
 
 
+    const {user} = useContext(AuthContext)
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -60,10 +62,7 @@ const PopularProducts = () => {
                 <div className="text-center mb-8 flex flex-col items-center gap-4">
                     <p className="text-2xl text-[#1B1A1A] mb-2">--- Sip & Savor ---</p>
                     <h2 className="font-rancho text-4xl md:text-6xl text-[#331A15] mb-4">Our Popular Products</h2>
-                    <Link to={'/add_new_coffee'} className="px-6 py-2 bg-[#E3B577] hover:bg-[#C59D5F] text-white font-rancho text-2xl flex justify-center items-center gap-2 rounded transition-colors duration-300">
-                        Add Coffee
-                        <RiCupLine />
-                    </Link>
+                    {user && <Link to={'/add_new_coffee'} className="px-6 py-2 bg-[#E3B577] hover:bg-[#C59D5F] text-white font-rancho text-2xl flex justify-center items-center gap-2 rounded transition-colors duration-300">Add Coffee<RiCupLine /></Link>}
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {products.map((product, index) => (

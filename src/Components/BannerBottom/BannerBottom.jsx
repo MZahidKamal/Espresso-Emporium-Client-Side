@@ -1,24 +1,30 @@
+import Icon01 from '../../assets/images/icons/1.png'
+import Icon02 from '../../assets/images/icons/2.png'
+import Icon03 from '../../assets/images/icons/3.png'
+import Icon04 from '../../assets/images/icons/4.png'
+
+
 const BannerBottom = () => {
 
 
     const features = [
         {
-            icon: "/src/assets/images/icons/1.png",
+            icon: Icon01,
             title: "Awesome Aroma",
             description: "You will definitely be a fan of the design & aroma of your coffee"
         },
         {
-            icon: "/src/assets/images/icons/2.png",
+            icon: Icon02,
             title: "High Quality",
             description: "We served the coffee to you maintaining the best quality"
         },
         {
-            icon: "/src/assets/images/icons/3.png",
+            icon: Icon03,
             title: "Pure Grades",
             description: "The coffee is made of the green coffee beans which you will love"
         },
         {
-            icon: "/src/assets/images/icons/4.png",
+            icon: Icon04,
             title: "Proper Roasting",
             description: "Your coffee is brewed by first roasting the green coffee beans"
         }
